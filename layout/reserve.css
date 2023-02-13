@@ -1,0 +1,41 @@
+.main { grid-area: main; background-color: #1A1A1D; opacity: 99%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: space-around;
+    flex-basis: auto;
+    column-gap: 10px;
+    row-gap: 30px;
+    padding: 30px;
+    align-content: stretch;
+}
+
+.reservationform {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+    padding: 20px;
+}
+
+.btn-block {
+    margin-top: 10px;
+    text-align: center;
+}
+
+button {
+    width: 150px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px; 
+    background: #0087cc;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #6eb8dd;
+}
