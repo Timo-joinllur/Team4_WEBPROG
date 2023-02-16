@@ -2,25 +2,25 @@ body {
     font-family: 'Ranga', cursive; 
     font-size: 20px;
     vertical-align: middle;
-       text-align: center;
-       align-content: center;
-       background-color: #6f2232;
-       word-wrap: break-word;
-       hyphens: auto;
-       margin: 0;
-       color: #ffff;
-       position: relative;
-       }
-       
-       img {
-              border-radius: 11px;
-              width: 100%;
+    text-align: center;
+    align-content: center;
+    background-color: #6f2232;
+    word-wrap: break-word;
+    hyphens: auto;
+    margin: 0;
+    color: #ffff;
+    position: relative;
+    }
+    
+    img {
+            border-radius: 11px;
+            width: 100%;
        }
        
        p{
-              font-family:'Inria Serif';
-              -webkit-text-stroke-width: 0.3px;
-              -webkit-text-stroke-color: #C3073F; 
+            font-family:'Inria Serif';
+            -webkit-text-stroke-width: 0.3px;
+            -webkit-text-stroke-color: #C3073F; 
        }
        p1{
               font-family:'Inria Serif';
