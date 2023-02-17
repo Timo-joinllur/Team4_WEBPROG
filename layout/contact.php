@@ -1,6 +1,6 @@
 <?php include "header.php"?>
         
-        <div class="cntrblock">contact us, if you feel like<br>
+        <div class="cntrblock">Contact us, if you feel like<br>
         ...giving a feedback <br>
         ...reporting an issue <br>
         ... or introducing a suggestion...
