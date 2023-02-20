@@ -44,7 +44,10 @@
             <div class="card" style="width: 18rem;">
                 <img class="card-img-top" style="height: 280px; width: 288px;" src="images/menuItem2.png" alt="item5">
                 <div class="card-body">
-                <p class="card-text" ><b>Sea Pizza :</b><br>shrimp<br>mushroom <br>fish  <br>special cheese </p>
+                <p class="card-text" ><b>Sea Pizza :</b><br>shrimp<br>mushroom <br>fish  <br>special cheese 
+                <p>salam</p>
+                </p>
+                
                 </div>
             </div>
         </div>
