@@ -75,7 +75,7 @@ CREATE TABLE `menu` (
 CREATE TABLE `reservation` (
   `id` int NOT NULL,
   `user_id` int NOT NULL,
-  `recieved` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `received` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `time` datetime NOT NULL,
   `text` varchar(60) NOT NULL,
   `complete` tinyint(1) NOT NULL
