@@ -70,7 +70,7 @@ CREATE TABLE `menu` (
 
 --
 -- Table structure for table `reservation`
---
+-- Roy's table
 
 CREATE TABLE `reservation` (
   `id` int NOT NULL,
