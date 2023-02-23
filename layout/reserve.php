@@ -6,38 +6,35 @@
                 <p>Name</p>
                 <input type="text" name="fname" placeholder="First name" required >
                 <input type="text" name="lname" placeholder="Last name" required >
-                
-                <p>Email</p>
-                <input type="email" name="email" placeholder="email@address.com" required>
-
-                <p>Phone</p>
-                    <input type="text" name="phone" placeholder="### ### ####" required>
         
-                <p>Reservation Date</p>
-                    <input type="date" name="date" required>
-                    <i class="fas fa-calendar-alt"></i>
-          
-                <p>Reservation Time</p>
-                    <input type="time" name="time" required>
-     
-                <p>How many people will you be with?</p>
-                    <input type="text" name="amount"/>
+                <p>Reservation date & time</p>
+                    <input type="datetime-local" name="time" required>
      
                 <p>Additional notes</p>
-                    <!--<textarea rows="3"></textarea> -->
-                    <input type="text" name="addnotes">
-        
-                <div class="btn-block">
-                    <button type="submit" name="submit">Send</button>
-                </div>
+                    <input type="text" name="text">
+                    <br><br>
+                    <input type="submit" name="submit" value="Submit">
             </form>
         </div>
 
     <?php
-    if(isset($_POST['submit']))
-    
+ if (isset($_POST['submit'])){
+    $fname = $_POST['fname'];
+    $lname = $_POST['lname'];
+    $time = $_POST['time'];
+    $text = $_POST['text'];
 
+    include "db.php";
+    $sql = "insert into reservation (fname, lname, datetime, text)
+    values('$fname', '$lname', '$time', '$text')";
 
+    if ($connection ->query($sql) === TRUE){
+        echo "Your information is added successfully";
+    }
+    else{
+        echo "Error:" .$connection->error;
+    }
+}
     ?>
 
 <?php include "footer.php"; ?>
