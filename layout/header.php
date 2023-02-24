@@ -22,6 +22,7 @@
 <div class="grid-container">
 
     <div class="header">
+        <div style="flex-grow: 3; vertical-align: middle; "><a href="login.php" class="button vcenter">Login</a></div>
         <div style="flex-grow: 3; vertical-align: middle; "><a href="contact.php" class="button vcenter">Contact</a></div>
         <div style="flex-grow: 3; vertical-align: middle; "><a href="staff.php" class="button vcenter">Staff</a> </div>
         <div style="flex-grow: 3; vertical-align: middle; "><a href="reserve.php" class="button vcenter">Reserve</a> </div>
