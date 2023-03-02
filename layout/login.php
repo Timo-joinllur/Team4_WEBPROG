@@ -1,29 +1,34 @@
 <?php
+$title = "Registration";
+include '../layout/header.php';
+?>
+<script src="../layout/js/site.js"></script>
 
-session_start();
+<form method = "post" action = "" onsubmit="" name="form1">
+<br>
+<input type = "text" name = "fname" placeholder = "First name" required><br><br>
+<input type = "text" name = "lname" placeholder = "Last name" required><br><br>
+<input type = "submit" value = "Register" name = "register">
+</form>
 
-//TODO: do not hardcode, get from database
-$login = 'admin';
-$password = 'admin';
+<?php
 
-if (isset($_POST['login']) && isset($_POST['password'])) //when form submitted
-{
-  if ($_POST['login'] === $login && $_POST['password'] === $password)
-  {
-    $_SESSION['login'] = $_POST['login']; //write login to server storage
-    header('Location: /'); //redirect to main
-  }
-  else
-  {
-    echo "<script>alert('Wrong login or password');</script>";
-    echo "<noscript>Wrong login or password</noscript>";
-  }
+if ( isset( $_POST["register"] ) ) {
+    $fname = $_POST['fname'];
+    $lname = $_POST['lname'];
+    include 'db.php';
+    $sql = "INSERT INTO users (fname, lname) 
+SELECT '$fname', '$lname'
+WHERE NOT EXISTS 
+    (SELECT fname, lname 
+     FROM users 
+     WHERE fname = '$fname' AND lname = '$lname')";
+    if ( $connection -> query( $sql ) === TRUE AND $connection -> affected_rows != 0) {
+        echo "<div class='cntrblock'>Thank you for registering!</div>";
+    }
+    else {
+        echo "<div class='cntrblock'>User already exists</div>";
+    }
 }
 
 ?>
-
-<form method="post">
-  Login:<br><input name="login"><br>
-  Password:<br><input name="password"><br>
-  <input type="submit">
-</form>

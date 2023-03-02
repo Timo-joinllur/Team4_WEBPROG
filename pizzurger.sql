@@ -89,8 +89,6 @@ CREATE TABLE `reservation` (
 
 CREATE TABLE `users` (
   `id` int NOT NULL,
-  `login` varchar(30) NOT NULL,
-  `password` varchar(64) NOT NULL,
   `fname` varchar(60) DEFAULT NULL,
   `lname` varchar(60) DEFAULT NULL,
   `purchases` int NOT NULL,
