@@ -14,8 +14,6 @@ include '../layout/header.php';
 
 <?php
 
-$username;
-$usersurname;
 
 if ( isset( $_POST["register"] ) ) 
 {
@@ -47,11 +45,14 @@ elseif (isset( $_POST["login"] ) )
     {
         while ($output = mysqli_fetch_assoc($result))
         {
-            echo $output['id'];
+            
+            $_SESSION["firstname"] = $output["fname"];
+            echo $_SESSION["firstname"];
             echo "<br>";
-            echo $output['fname'];
+            $_SESSION["surname"] = $output["lname"];
             echo "<br>";
-            echo $output['lname'];
+            $_SESSION["userid"] = $output["id"];
+            echo '<script> window.location.replace("setcookies.php")</script>';
         }
     }
     else

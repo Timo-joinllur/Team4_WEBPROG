@@ -1,3 +1,26 @@
+<?php
+session_start();
+
+if(count($_COOKIE) > 0){
+    if(isset($_COOKIE["firstname"])){
+        $fname = $_COOKIE["firstname"];
+        $_SESSION["firstname"] = $fname;
+    }
+    if(isset($_COOKIE["surname"])){
+        $lname = $_COOKIE["surname"];
+        $_SESSION["surname"] = $lname;
+        
+    }
+    if(isset($_COOKIE["userid"])){
+        $userid = $_COOKIE["userid"];
+        $_SESSION["userid"] = $userid;
+    }
+};
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,10 +45,28 @@
 <div class="grid-container">
 
     <div class="header">
-        <div style="flex-grow: 3; vertical-align: middle; "><a href="login.php" class="button vcenter">Login</a></div>
-        <div style="flex-grow: 3; vertical-align: middle; "><a href="contact.php" class="button vcenter">Contact</a></div>
+        <div style="flex-grow: 3; vertical-align: middle; ">
+        <?php if(count($_COOKIE) > 1){
+        echo "<a href='logout.php' class='button vcenter'>Logout</a>";
+        }
+            else {
+                echo "<a href='login.php' class='button vcenter'>Login</a>";
+            }
+        ?>
+        </div>
+        <div style="flex-grow: 3; vertical-align: middle; ">
+        <?php if(count($_COOKIE) > 1){
+        echo "<a href='contact.php' class='button vcenter'>Contact</a>";
+        }
+        ?>
+        </div>
         <div style="flex-grow: 3; vertical-align: middle; "><a href="staff.php" class="button vcenter">Staff</a> </div>
-        <div style="flex-grow: 3; vertical-align: middle; "><a href="reserve.php" class="button vcenter">Reserve</a> </div>
+        <div style="flex-grow: 3; vertical-align: middle; ">
+        <?php if(count($_COOKIE) > 1){
+        echo "<a href='reserve.php' class='button vcenter'>Reserve</a>";
+        }
+        ?>
+         </div>
         <div style="flex-grow: 3; vertical-align: middle; "><a href="menu.php" class="button vcenter">Menu</a> </div>
         <div style="flex-grow: 5;"></div>
         <div class="visible" style="flex-grow: 1;"><p>Pizz</p><p1>urgeR</p1></div> 
