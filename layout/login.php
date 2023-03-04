@@ -9,17 +9,22 @@ include '../layout/header.php';
 <input type = "text" name = "fname" placeholder = "First name" required><br><br>
 <input type = "text" name = "lname" placeholder = "Last name" required><br><br>
 <input type = "submit" value = "Register" name = "register">
+<input type = "submit" value = "Login" name = "login">
 </form>
 
 <?php
 
-if ( isset( $_POST["register"] ) ) {
+$username;
+$usersurname;
+
+if ( isset( $_POST["register"] ) ) 
+{
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
     include 'db.php';
     $sql = "INSERT INTO users (fname, lname) 
-SELECT '$fname', '$lname'
-WHERE NOT EXISTS 
+    SELECT '$fname', '$lname'
+    WHERE NOT EXISTS 
     (SELECT fname, lname 
      FROM users 
      WHERE fname = '$fname' AND lname = '$lname')";
@@ -31,4 +36,28 @@ WHERE NOT EXISTS
     }
 }
 
+elseif (isset( $_POST["login"] ) )
+{
+    $fname = $_POST['fname'];
+    $lname = $_POST['lname'];
+    include 'db.php';
+    $sql2 = "SELECT * FROM users WHERE fname = '$fname' AND lname = '$lname'";
+    $result = $connection ->query($sql2);
+    if($result->num_rows > 0 )
+    {
+        while ($output = mysqli_fetch_assoc($result))
+        {
+            echo $output['id'];
+            echo "<br>";
+            echo $output['fname'];
+            echo "<br>";
+            echo $output['lname'];
+        }
+    }
+    else
+    {echo "no";}
+}
+
+
+include '../layout/footer.php';
 ?>
