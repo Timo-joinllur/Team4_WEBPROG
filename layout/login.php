@@ -27,7 +27,7 @@ if ( isset( $_POST["register"] ) )
      FROM users 
      WHERE fname = '$fname' AND lname = '$lname')";
     if ( $connection -> query( $sql ) === TRUE AND $connection -> affected_rows != 0) {
-        echo "<div class='cntrblock'>Thank you for registering!</div>";
+        echo "<div class='cntrblock'>Thank you for registering!<br>Please, login to continue</div>";
     }
     else {
         echo "<div class='cntrblock'>User already exists</div>";
@@ -47,10 +47,7 @@ elseif (isset( $_POST["login"] ) )
         {
             
             $_SESSION["firstname"] = $output["fname"];
-            echo $_SESSION["firstname"];
-            echo "<br>";
             $_SESSION["surname"] = $output["lname"];
-            echo "<br>";
             $_SESSION["userid"] = $output["id"];
             echo '<script> window.location.replace("setcookies.php")</script>';
         }
