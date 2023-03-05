@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(count($_COOKIE) > 0){
+if(count($_COOKIE) > 1){
     if(isset($_COOKIE["firstname"])){
         $fname = $_COOKIE["firstname"];
         $_SESSION["firstname"] = $fname;
@@ -68,7 +68,14 @@ if(count($_COOKIE) > 0){
         ?>
          </div>
         <div style="flex-grow: 3; vertical-align: middle; "><a href="menu.php" class="button vcenter">Menu</a> </div>
-        <div style="flex-grow: 5;"></div>
+        <div style="flex-grow: 5;">
+            <?php
+            if(isset($_SESSION["isadmin"]) AND $_SESSION["isadmin"] == TRUE)
+            {
+                echo "<a href='admin.php' class='button vcenter'>Admin tools</a>";
+            }
+            ?>
+        </div>
         <div class="visible" style="flex-grow: 1;"><p>Pizz</p><p1>urgeR</p1></div> 
         <div style="flex-grow: 2;"> <a href="index.php"><img style="width: 40px; padding: 5px;" class="vcenter" src="images/logo.png" alt="logo"></a></div> 
     </div>

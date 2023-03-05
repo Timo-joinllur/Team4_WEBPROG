@@ -49,11 +49,12 @@ elseif (isset( $_POST["login"] ) )
             $_SESSION["firstname"] = $output["fname"];
             $_SESSION["surname"] = $output["lname"];
             $_SESSION["userid"] = $output["id"];
+            $_SESSION["isadmin"] = $output["admin"];
             echo '<script> window.location.replace("setcookies.php")</script>';
         }
     }
-    else
-    {echo "no";}
+//    else
+//    {echo "no";}
 }
 
 
