@@ -12,7 +12,7 @@
                     <input type="datetime-local" name="time" required>
      
                 <p>Additional notes</p>
-                    <input type="text" name="text">
+                    <input type="text" name="text" placeholder="e.g How many people?">
                     <br><br>
                     <input type="submit" name="submit" value="Submit">
             </form>
