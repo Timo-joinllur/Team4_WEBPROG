@@ -2,7 +2,6 @@
 $title = "Registration";
 include '../layout/header.php';
 ?>
-<script src="../layout/js/site.js"></script>
 
 <form method = "post" action = "" onsubmit="" name="form1">
 <br>
@@ -53,8 +52,8 @@ elseif (isset( $_POST["login"] ) )
             echo '<script> window.location.replace("setcookies.php")</script>';
         }
     }
-//    else
-//    {echo "no";}
+    else
+    {echo "User does not exist";}
 }
 
 
