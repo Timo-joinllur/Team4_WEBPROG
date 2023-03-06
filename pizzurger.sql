@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Feb 20, 2023 at 11:39 AM
+-- Generation Time: Mar 06, 2023 at 08:37 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.0.19
 
@@ -33,6 +33,31 @@ CREATE TABLE `comments` (
   `text` varchar(200) NOT NULL,
   `visible` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `foods`
+--
+
+CREATE TABLE `foods` (
+  `id` int NOT NULL,
+  `name` varchar(25) NOT NULL,
+  `price1` int NOT NULL,
+  `price_Discount` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `foods`
+--
+
+INSERT INTO `foods` (`id`, `name`, `price1`, `price_Discount`) VALUES
+(4, 'Sea Pizza', 12, 10),
+(5, 'Cheeseburger', 8, 6),
+(6, 'Pepperoni Pizza', 10, 8),
+(7, 'Vegetables Pizza', 8, 7),
+(8, 'Special Burger', 15, 12),
+(9, 'Triple Burger', 18, 15);
 
 -- --------------------------------------------------------
 
@@ -70,7 +95,7 @@ CREATE TABLE `menu` (
 
 --
 -- Table structure for table `reservation`
--- Roy's table
+--
 
 CREATE TABLE `reservation` (
   `id` int NOT NULL,
@@ -81,6 +106,13 @@ CREATE TABLE `reservation` (
   `complete` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Dumping data for table `reservation`
+--
+
+INSERT INTO `reservation` (`id`, `user_id`, `received`, `time`, `text`, `complete`) VALUES
+(1, 4, '2023-03-06 08:29:29', '2023-03-12 10:29:00', '235626', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -89,11 +121,26 @@ CREATE TABLE `reservation` (
 
 CREATE TABLE `users` (
   `id` int NOT NULL,
-  `fname` varchar(60) DEFAULT NULL,
-  `lname` varchar(60) DEFAULT NULL,
-  `purchases` int NOT NULL,
-  `admin` tinyint(1) NOT NULL
+  `fname` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `lname` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `purchases` int DEFAULT '0',
+  `admin` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `fname`, `lname`, `purchases`, `admin`) VALUES
+(3, 'Mitch', 'Valenta', 0, NULL),
+(4, 'da', 'da', 0, 1),
+(5, 'ad', 'ad', 0, NULL),
+(6, 'ha', 'ha', 0, NULL),
+(7, 'daaa', 'dada', 0, NULL),
+(8, 'd', 'd', 0, NULL),
+(9, 'Hello', 'aLLo', 0, NULL),
+(10, 'Gdsgdsg', 'adshadfh', 0, NULL),
+(11, 'Jimo', 'Bimo', 0, NULL);
 
 --
 -- Indexes for dumped tables
@@ -105,6 +152,12 @@ CREATE TABLE `users` (
 ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `foods`
+--
+ALTER TABLE `foods`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `main`
@@ -142,6 +195,12 @@ ALTER TABLE `comments`
   MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `foods`
+--
+ALTER TABLE `foods`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
 -- AUTO_INCREMENT for table `main`
 --
 ALTER TABLE `main`
@@ -157,13 +216,13 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables

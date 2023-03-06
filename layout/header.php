@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(isset($_SESSION["firstname"]) AND isset($_SESSION["surname"])){
+if(isset($_COOKIE["firstname"]) AND isset($_COOKIE["surname"])){
     if(isset($_COOKIE["firstname"])){
         $fname = $_COOKIE["firstname"];
         $_SESSION["firstname"] = $fname;
