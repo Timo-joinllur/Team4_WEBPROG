@@ -1,7 +1,8 @@
 <?php include "header.php"?>
         
         <div class="cntrblock">
-        <?php if(count($_COOKIE) > 1){echo "<div class='cntrblock'>Hello, $fname $lname</div>";}?>
+        <?php if(isset($_SESSION["firstname"]) AND isset($_SESSION["surname"])){echo "<div class='cntrblock'>Hello, $fname $lname</div>";}
+            ?>
             <h1>The only place to eat in Hämeenlinna! </h1>
         </div>
         

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(count($_COOKIE) > 1){
+if(isset($_SESSION["firstname"]) AND isset($_SESSION["surname"])){
     if(isset($_COOKIE["firstname"])){
         $fname = $_COOKIE["firstname"];
         $_SESSION["firstname"] = $fname;
@@ -46,7 +46,7 @@ if(count($_COOKIE) > 1){
 
     <div class="header">
         <div style="flex-grow: 3; vertical-align: middle; ">
-        <?php if(count($_COOKIE) > 1){
+        <?php if(isset($_SESSION["firstname"]) AND isset($_SESSION["surname"])){
         echo "<a href='logout.php' class='button vcenter'>Logout</a>";
         }
             else {
@@ -55,14 +55,14 @@ if(count($_COOKIE) > 1){
         ?>
         </div>
         <div style="flex-grow: 3; vertical-align: middle; ">
-        <?php if(count($_COOKIE) > 1){
+        <?php if(isset($_SESSION["firstname"]) AND isset($_SESSION["surname"])){
         echo "<a href='contact.php' class='button vcenter'>Contact</a>";
         }
         ?>
         </div>
         <div style="flex-grow: 3; vertical-align: middle; "><a href="staff.php" class="button vcenter">Staff</a> </div>
         <div style="flex-grow: 3; vertical-align: middle; ">
-        <?php if(count($_COOKIE) > 1){
+        <?php if(isset($_SESSION["firstname"]) AND isset($_SESSION["surname"])){
         echo "<a href='reserve.php' class='button vcenter'>Reserve</a>";
         }
         ?>
