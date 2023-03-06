@@ -1,4 +1,4 @@
-<?php include "../header.php"?>
+<?php include "header.php"?>
 <div class="container">
        <div class="row">
               <div class="col-md-12">
@@ -32,7 +32,7 @@
        </div>
 
 <?php 
-       include '../db.php';
+       include 'db.php';
        if(isset($_POST["add"])){
               $name = $_POST['name'];
               $price = $_POST['price'];
@@ -47,4 +47,4 @@
        }
        ?>
 
-<?php include "../footer.php"; ?>
+<?php include "footer.php"; ?>
