@@ -11,8 +11,7 @@
         <div class="commentform">
         <form method="post" action="">
         <p>Leave your comment here</p>
-            <label for="name">Leave your comments, thought or features that we can add - here</label>
-            <input type="text" id="name" placeholder="Иван Иванов">
+            <input type="text" id="name" placeholder="Leave your comments, thought or features that we can add - here">
         </form>
         </div>
 
