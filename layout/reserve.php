@@ -20,7 +20,7 @@
 
     include 'db.php';
     $sql = "insert into reservation (user_id, time, text, complete)
-    values('$userid', '$time', '$text', 0)";
+    values('$userid', '$time', '$text', 1)";
 
     if ($connection ->query($sql) === TRUE){
         echo "Your information is added successfully";
