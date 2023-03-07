@@ -1,10 +1,11 @@
 <?php 
 include "header.php";
-include 'db.php'
+include 'db.php';
 ?>
 
-<?php
+<h1> Reservation table </h1>
 
+<?php
     $sql = "select * from reservation order by time desc";
 
     $result = $connection -> query($sql);
@@ -18,7 +19,7 @@ include 'db.php'
             <td>$row[received]</td>
             <td>$row[time]</td>
             <td>$row[text]</td>
-            <td>$row[complete]</td>
+            <td>$row[complete]<input type= 'checkbox' name='checkbox' value='' id='checkbox'></td></td>
             </tr>
         ";
         }
@@ -31,9 +32,6 @@ include 'db.php'
         }
     $connection -> close();
 ?>
-
-
-
 
 
 
