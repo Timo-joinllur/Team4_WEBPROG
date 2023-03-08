@@ -23,7 +23,7 @@
     values('$userid', '$time', '$text', 1)";
 
     if ($connection ->query($sql) === TRUE){
-        echo "Your information is added successfully";
+        echo "Your reservation is added successfully!";
     }
     else{
         echo "Error:" .$connection->error;
