@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Mar 07, 2023 at 08:53 AM
+-- Generation Time: Mar 08, 2023 at 05:47 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.0.19
 
@@ -33,6 +33,14 @@ CREATE TABLE `comments` (
   `text` varchar(200) NOT NULL,
   `visible` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`id`, `user_id`, `text`, `visible`) VALUES
+(1, 4, 'Comment', 1),
+(2, 4, 'comment 2', 1);
 
 -- --------------------------------------------------------
 
@@ -79,9 +87,11 @@ CREATE TABLE `main` (
 --
 
 INSERT INTO `main` (`id`, `name`, `img_name`, `img_link`, `text`, `visible`) VALUES
-(1, 'one', 'burger1.jpg', 'images/burger1.jpg', 'Over the fire cooked burgers with perfectly balanced combinations of fresh ingredients', 0),
+(1, 'one', 'burger1.jpg', 'images/burger1.jpg', 'Over the fire cooked burgers with perfectly balanced combinations of fresh ingredients', 1),
 (2, 'pizza1', 'pizza1.jpg', 'images/pizza1.jpg', 'Pizzas cooked in medieval stove, always hot for our guests', 1),
-(3, 'three', 'pizza2.jpg', 'images/pizza2.jpg', 'We know best combinations of flavors. There is no secret - it is an art of our chef.', 1);
+(3, 'three', 'pizza2.jpg', 'images/pizza2.jpg', 'We know best combinations of flavors. There is no secret - it is an art of our chef.', 1),
+(4, 'pizza3', 'pizza3.jpg', 'images/pizza3.jpg', 'Can you get anything better elsewhere?', 1),
+(6, 'pizza3', 'pizza3.jpg', 'images/pizza3.jpg', 'Can you get anything better elsewhere?', 0);
 
 -- --------------------------------------------------------
 
@@ -120,7 +130,9 @@ CREATE TABLE `reservation` (
 --
 
 INSERT INTO `reservation` (`id`, `user_id`, `received`, `time`, `text`, `complete`) VALUES
-(1, 4, '2023-03-06 08:29:29', '2023-03-12 10:29:00', '235626', 0);
+(1, 4, '2023-03-06 08:29:29', '2023-03-12 10:29:00', '235626', 0),
+(2, 4, '2023-03-07 08:57:03', '2023-03-02 14:59:00', 'gimme food', 0),
+(3, 4, '2023-03-07 13:13:09', '2023-03-16 15:16:00', 'foooooood', 0);
 
 -- --------------------------------------------------------
 
@@ -150,7 +162,8 @@ INSERT INTO `users` (`id`, `fname`, `lname`, `purchases`, `admin`) VALUES
 (9, 'Hello', 'aLLo', 0, NULL),
 (10, 'Gdsgdsg', 'adshadfh', 0, NULL),
 (11, 'Jimo', 'Bimo', 0, NULL),
-(12, 'daaagsgasg', 'asdhdfashas', 0, NULL);
+(12, 'daaagsgasg', 'asdhdfashas', 0, NULL),
+(13, 'qwtwery', 'urtu', 0, NULL);
 
 --
 -- Indexes for dumped tables
@@ -202,7 +215,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `foods`
@@ -214,7 +227,7 @@ ALTER TABLE `foods`
 -- AUTO_INCREMENT for table `main`
 --
 ALTER TABLE `main`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `menu`
@@ -226,13 +239,13 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Constraints for dumped tables

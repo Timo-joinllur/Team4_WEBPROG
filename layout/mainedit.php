@@ -91,6 +91,5 @@ if ( isset( $_POST["delete"] ) )
     echo '<script> window.location.replace("index.php")</script>';
 }
 
-
 include "footer.php";
 ?>
