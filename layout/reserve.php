@@ -7,7 +7,7 @@
                     <input type="datetime-local" name="time" required>
      
                 <p>Additional notes</p>
-                    <input type="text" name="text" placeholder="e.g How many people?">
+                    <textarea name="text" style="width: 700px"> </textarea>
                     <br><br>
                     <input type="submit" name="submit" value="Submit">
             </form>
@@ -20,10 +20,10 @@
 
     include 'db.php';
     $sql = "insert into reservation (user_id, time, text, complete)
-    values('$userid', '$time', '$text', 0)";
+    values('$userid', '$time', '$text', 1)";
 
     if ($connection ->query($sql) === TRUE){
-        echo "Your information is added successfully";
+        echo "Your reservation is added successfully!";
     }
     else{
         echo "Error:" .$connection->error;

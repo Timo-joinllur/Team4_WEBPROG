@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Mar 06, 2023 at 08:37 AM
+-- Generation Time: Mar 07, 2023 at 08:53 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.0.19
 
@@ -74,6 +74,15 @@ CREATE TABLE `main` (
   `visible` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Dumping data for table `main`
+--
+
+INSERT INTO `main` (`id`, `name`, `img_name`, `img_link`, `text`, `visible`) VALUES
+(1, 'one', 'burger1.jpg', 'images/burger1.jpg', 'Over the fire cooked burgers with perfectly balanced combinations of fresh ingredients', 0),
+(2, 'pizza1', 'pizza1.jpg', 'images/pizza1.jpg', 'Pizzas cooked in medieval stove, always hot for our guests', 1),
+(3, 'three', 'pizza2.jpg', 'images/pizza2.jpg', 'We know best combinations of flavors. There is no secret - it is an art of our chef.', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -140,7 +149,8 @@ INSERT INTO `users` (`id`, `fname`, `lname`, `purchases`, `admin`) VALUES
 (8, 'd', 'd', 0, NULL),
 (9, 'Hello', 'aLLo', 0, NULL),
 (10, 'Gdsgdsg', 'adshadfh', 0, NULL),
-(11, 'Jimo', 'Bimo', 0, NULL);
+(11, 'Jimo', 'Bimo', 0, NULL),
+(12, 'daaagsgasg', 'asdhdfashas', 0, NULL);
 
 --
 -- Indexes for dumped tables
@@ -204,7 +214,7 @@ ALTER TABLE `foods`
 -- AUTO_INCREMENT for table `main`
 --
 ALTER TABLE `main`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `menu`
@@ -222,7 +232,7 @@ ALTER TABLE `reservation`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Constraints for dumped tables

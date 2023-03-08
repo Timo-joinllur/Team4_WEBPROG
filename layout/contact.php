@@ -11,11 +11,57 @@
         <div class="commentform">
         <form method="post" action="">
         <p>Leave your comment here</p>
-            <input type="text" id="name" placeholder="Leave your comments, thought or features that we can add - here">
+        <textarea name="text" id="text" rows="18" placeholder="Leave your comments, thought or features that we can add - here" class="input-text"></textarea>
+        <br><br>
+        <input type="submit" name="submit" value="Submit">
         </form>
         </div>
+        <?php
+            if (isset($_POST['submit'])){
 
+                $text = $_POST['text'];
 
+                include 'db.php';
+                $sql = "insert into comments (user_id, text, visible)
+                values( '$userid', '$text', 1)";
+
+                if ($connection ->query($sql) === TRUE){
+                    echo "Your information is added successfully";
+                }
+                else{
+                    echo "Error:" .$connection->error;
+                }
+            }
+        ?>
+
+        <?php
+            include 'db.php';
+            $sql1 = "select * from comments where visible = 1";
+
+            $result = $connection -> query($sql1);
+    
+            if($result->num_rows > 0 ){
+                echo"<table class='table table-dark'>
+                <tr><th>Customers comments</th>";
+                while($row = $result -> fetch_assoc()){
+                echo"
+                    <tr>
+                    <td>$row[text]</td>
+                    </tr>
+                ";
+                }
+                echo "</table>";
+            }
+
+            else
+                {
+                    echo "NO Results";
+                }
+                    $connection -> close();
+                ?>
+
+        
+<br><br>
 
         <div class="invisible">~~~~~~~~</div>
 
