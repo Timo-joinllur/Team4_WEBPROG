@@ -1,6 +1,20 @@
 <?php include "header.php"; ?>
 <h3>Welcome to the order page</h3>
-<form method="post" action="cart.php">
+<script>
+function validateForm() {
+       var name = document.forms["myForm"]["name_person"].value;
+       var address = document.forms["myForm"]["address"].value;
+       var number = document.forms["myForm"]["number"].value;
+       if (name.length > 0 && address.length > 0 && number.length > 0) {
+              return true;
+       } else {
+              alert("Please fill in all fields.");
+              return false;
+              }
+}
+</script>
+
+<form method="post" action="cart.php" onsubmit="return validateForm()" name = "myForm">
 <?php
 include 'db.php';
 $sql = "SELECT * FROM foods";
