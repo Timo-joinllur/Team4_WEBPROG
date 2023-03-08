@@ -6,7 +6,7 @@ include 'db.php';
 <h1> Reservation table </h1>
 
 <?php
-    $sql = "SELECT * FROM reservation ORDER BY time DESC";
+    $sql = "select * from reservation order by time desc";
     $result = $connection->query($sql);
     if ($result->num_rows > 0) {
         echo "<table class='table table-dark'>
@@ -31,9 +31,9 @@ include 'db.php';
         $complete = $_POST ['complete'];
         $query = mysqli_query($connection, "UPDATE reservation set complete= 0  ");
             if($query){
-             echo "<h3> Your information is updated successfully </h3>";
+             echo "<h3> Information has been updated successfully </h3>";
             }
-            else { echo "Record not modified";
+            else { echo "Nothings has been modified";
             }
 
     }
