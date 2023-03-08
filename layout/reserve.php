@@ -3,12 +3,12 @@
         <div class="reservationform">
             <form method="post" action="">
                 <h1>Reservation Form</h1>  
-                <p>Reservation date & time</p>
+                <h2>Reservation date & time</h2>
                     <input type="datetime-local" name="time" required>
      
-                <p>Additional notes</p>
-                    <textarea name="text" style="width: 700px"> </textarea>
-                    <br><br>
+                <h2>Additional notes</h2>
+                    <textarea name="text" style="width: 700px" placeholder=" How many people?" required> </textarea>
+                    <br>
                     <input type="submit" name="submit" value="Submit">
             </form>
         </div>

@@ -78,8 +78,9 @@
             </div>
         </div>
         <div class="invisible">~~~~~~~~</div>
-        <div class="cntrblock"><h2>if you want order click below</h2></div>
+        <div class="cntrblock"><h2>If you want order, click below</h2></div>
+        <br>
 <div class="order">
-    <a href="order.php"><button>order now</button></a>
+    <a href="order.php"><button>Order now</button></a>
 </div>
 <?php include "footer.php"; ?>
