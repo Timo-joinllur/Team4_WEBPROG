@@ -7,28 +7,34 @@ $sql = "SELECT * FROM foods";
 $result = $connection->query($sql);
 if ($result->num_rows > 0) {
        echo "<table class='table' style='height: 150px;'>
-             <tr class='thead-dark'>
-             <th><p>Name|</p></th>
-             <th><p>Price|</p></th>
-             <th><p>Price with discount|</p></th>
-             <th><p>Count</p></th>
-             </tr>";
+              <tr class='thead-dark'>
+              <th><p>Name|</p></th>
+              <th><p>Price|</p></th>
+              <th><p>Price with discount|</p></th>
+              <th><p>Count</p></th>
+              </tr>";
        while ($row = $result->fetch_assoc()) {
               echo "<tr>
-                    <td><p style='color:white;font-size:20px;'>$row[name]</p></td>
-                    <td><p style='color:red;font-size:20px;'>$row[price1]</p></td>
-                    <td><p style='font-size:20px;color:red;'>$row[price_Discount]</p></td>
-                    <td>
-                    <input type='number' name='item[$row[id]][count]' style='width:50px;'>
-                    <input type='hidden' name='item[$row[id]][name]' value='$row[name]'>
-                    <input type='hidden' name='item[$row[id]][price]' value='$row[price_Discount]'>
-                    </td>
-                    </tr>";
+                     <td><p style='color:white;font-size:20px;'>$row[name]</p></td>
+                     <td><p style='color:red;font-size:20px;'>$row[price1]</p></td>
+                     <td><p style='font-size:20px;color:red;'>$row[price_Discount]</p></td>
+                     <td>
+                     <input type='number' name='item[$row[id]][count]' style='width:50px;'>
+                     <input type='hidden' name='item[$row[id]][name]' value='$row[name]'>
+                     <input type='hidden' name='item[$row[id]][price]' value='$row[price_Discount]'>
+                     </td>
+                     </tr>";
        }
-       echo "</table><input type='submit' value='View Cart'></form>";
+       echo "</table>
+       <input type='text' name='name_person' placeholder='Enter your name'><br><br>
+       <input type='text' name='address' placeholder='Enter your address'><br><br>
+       <input type='number' name='number' placeholder='Enter your phone number'><br><br>
+       <input type='submit' value='View Cart' name='view_cart'>
+       </form>";
 } else {
        echo "No information";
 }
 $connection->close();
 ?>
+</form>
 <?php include "footer.php"; ?>
