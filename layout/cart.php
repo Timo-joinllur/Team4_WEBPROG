@@ -59,19 +59,17 @@ echo "<tr>
 unset($_SESSION['cart']);
 //get the information of the user
 include 'function.php';
-if (isset($_POST['view_cart'])){
-       if(empty($_POST['name_person']) && empty($_POST['address']) && empty($_POST['number'])){
-              // redirected('order.php','Please fill out all required fields. ');
-              header("Location: " . $_SERVER["HTTP_REFERER"]);
-       } else {
+if (isset($_POST['view_cart'])){ 
               $user_name = $_POST['name_person'];
               $address = $_POST['address'];
               $number = $_POST['number'];
               // do something with the user's information
               echo "<h4><b>$user_name</b> thanks for your order and your address <b> $address </b> . <h4>";
-       
+              echo "<br>";
+              $masked_number = substr($number, 0, 3) . "XXX" . substr($number, 6, 3);
+              echo "<h4> your number is :</h4>" .$masked_number;
 }
-}
+
 
 ?>
 

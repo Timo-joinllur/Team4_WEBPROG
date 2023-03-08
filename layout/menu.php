@@ -81,6 +81,6 @@
         <div class="cntrblock"><h2>If you want order, click below</h2></div>
         <br>
 <div class="order">
-    <a href="order.php"><button>Order now</button></a>
+    <a href="order.php"><button style= "background-color:white ; height:55px"><p style='margin-top:5px ; font-weight: bold;'> Order now</p></button></a>
 </div>
 <?php include "footer.php"; ?>
