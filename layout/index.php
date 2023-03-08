@@ -74,8 +74,8 @@ if(isset($_SESSION["isadmin"]) AND $_SESSION["isadmin"] == TRUE)
 {
     echo "
             <div class='cntrblock'>
-            <form action='maincheck.php' method='get' target='blank'>
-            <button type='submit'> Remove unchecked articles </button>
+            <form action='maincreate.php' method='post' target='blank'>
+            <button type='submit' id='check' name ='check'> Add an article </button>
             </form>
         </div>
         ";
@@ -85,11 +85,14 @@ if(isset($_SESSION["isadmin"]) AND $_SESSION["isadmin"] == TRUE)
 {
     echo "
             <div class='cntrblock'>
-            <form action='maincreate.php' method='get' target='blank'>
-            <button type='submit'> Add new article </button>
+            <form action='' method='get' target='blank'>
+            <button type='submit'> Remove unchecked articles </button>
             </form>
         </div>
         ";
+    if ( isset( $_POST["delete"] ) ) {
+        include 'maincheck.php';
+    }
 }
 
         ?>
