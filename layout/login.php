@@ -13,6 +13,7 @@ include '../layout/header.php';
 
 <?php
 
+//Registration: check on data existance in db, fails and gives 'User already exists' on existant data
 
 if ( isset( $_POST["register"] ) ) 
 {
@@ -32,6 +33,8 @@ if ( isset( $_POST["register"] ) )
         echo "<div class='cntrblock'>User already exists</div>";
     }
 }
+
+//Login, if data is does not exists, fails and reports 'User does nopt exists', gives admin rights only after login, but also creates cookies for automatic login without admin rights, even if they are granted to an account
 
 elseif (isset( $_POST["login"] ) )
 {
