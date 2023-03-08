@@ -1,5 +1,6 @@
 <?php include "header.php"?>
         
+<div class="txtblock">
         <div class="reservationform">
             <form method="post" action="">
                 <h1>Reservation Form</h1>  
@@ -23,12 +24,13 @@
     values('$userid', '$time', '$text', 1)";
 
     if ($connection ->query($sql) === TRUE){
-        echo "Your reservation is added successfully!";
+        echo "Your reservation was added successfully!";
     }
     else{
         echo "Error:" .$connection->error;
     }
 }
     ?>
+</div>
 
 <?php include "footer.php"; ?>

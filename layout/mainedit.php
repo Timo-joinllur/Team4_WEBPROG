@@ -15,7 +15,7 @@ $row = mysqli_fetch_array($result);
 
 $img_link = "$row[img_link]";
 
-echo "<div class='cntrblock'>Editing article numer $id</div>";
+echo "<div class='cntrblock'>Editing article number $id</div>";
 
 echo "
 <form method = 'post' action = ''>

@@ -6,6 +6,7 @@ include 'db.php';
 <h1> Reservation table </h1>
 
 <?php
+//  $id= $_GET['id'];
     $sql = "select * from reservation order by time desc";
     $result = $connection->query($sql);
     if ($result->num_rows > 0) {
@@ -17,29 +18,30 @@ include 'db.php';
                 <td>$row[received]</td>
                 <td>$row[time]</td>
                 <td>$row[text]</td>
-                <td>$row[complete] <button onclick='mySwitch()' name='accept'>Accept</button></td>
+                <td>$row[complete]</td>
                 </tr>";
         }
         echo "</table>";
     } else {
         echo "NO Results";
     }
-    $connection->close();
+ /*   $connection->close();
 
    
     if(isset($_POST['accept'])){
-        $complete = $_POST ['complete'];
-        $query = mysqli_query($connection, "UPDATE reservation set complete= 0  ");
+    
+        $query = mysqli_query($connection, "DELETE FROM reservation WHERE id='$id'");
             if($query){
              echo "<h3> Information has been updated successfully </h3>";
             }
             else { echo "Nothings has been modified";
             }
 
+            echo '<script window.location.replace("admin.php")</script>';
     }
 
 
-
+*/
 ?>
 
 </div>

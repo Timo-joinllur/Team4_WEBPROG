@@ -1,10 +1,3 @@
-function mySwitch() {
-    document.getElementById("myBox").style.display = "none";
-  }
-
-function uncheck(){
-    document.getElementById('checkbox').checked = false;
-}
 function validateForm() {
   var name = document.forms["myForm"]["name_person"].value;
   var address = document.forms["myForm"]["address"].value;

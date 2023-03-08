@@ -42,7 +42,7 @@
                      echo "changed";
               }
               else{
-                     echo "didn't changed";
+                     echo "didn't change";
               };
        }
        ?>
